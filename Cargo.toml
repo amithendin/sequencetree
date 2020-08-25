@@ -10,5 +10,5 @@ description = "a new type of collection to store keys and their corresponding va
 keywords = ["collections"]
 categories = ["data-structures"]
 
-[dependencies]
+[dev-dependencies]
 rand = "*"
