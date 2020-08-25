@@ -44,3 +44,10 @@ languages is planned.
     st.set("hello", "world"); // set a key to a value
     
     println!("value = {:?}", set.get("hello")); // fetch the value
+    
+#### Todo:
+    - make generic implementation
+    - expand README to include 
+        - picture explantions, 
+        - efficiency calculation 
+        - preformance chart to compare with current solutions
