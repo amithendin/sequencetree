@@ -3,9 +3,9 @@ mod sequencetree;
 use sequencetree::SequenceTree;
 
 #[cfg(test)]
-extern crate rand;
-
 mod tests {
+    extern crate rand;
+
     use rand::Rng;
 
     fn pretty_print_int(i: u64) -> String {
