@@ -3,6 +3,12 @@ name = "sequencetree"
 version = "0.1.0"
 authors = ["Amit Hendin"]
 edition = "2018"
+license-file = "LICENSE"
+readme = "README.md"
+repository = "https://github.com/amithendin/sequencetree.git"
+description = "a new type of collection to store keys and their corresponding values"
+keywords = ["collections"]
+categories = ["data-structures"]
 
 [dependencies]
 rand = "*"
