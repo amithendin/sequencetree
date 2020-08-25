@@ -46,6 +46,7 @@ languages is planned.
     println!("value = {:?}", set.get("hello")); // fetch the value
     
 #### Todo:
+    - deletion of keys and values from tree
     - make generic implementation
     - expand README to include 
         - picture explantions, 
