@@ -1,10 +1,10 @@
-extern crate rand;
-
 mod binarysearchtree;
 mod sequencetree;
 use sequencetree::SequenceTree;
 
 #[cfg(test)]
+extern crate rand;
+
 mod tests {
     use rand::Rng;
 
