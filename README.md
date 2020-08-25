@@ -51,3 +51,4 @@ languages is planned.
         - picture explantions, 
         - efficiency calculation 
         - preformance chart to compare with current solutions
+    - comments in code
