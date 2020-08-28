@@ -32,24 +32,30 @@ next node in the many next nodes each node can potentially hold. for this reason
 speed boost.
 
 #### Current State
-I have currently only implemented SequenceTree for strings but in theory they could be implemented for any kind of sequential data
-but for said data to also be used with binary search trees it must implement the compare function (less than, greater than, equal to).
-In the future when I have time to get into rust generics I will implement a generic version. For now no other version in other
-languages is planned.
+Tree is implemented generically, for this implementation though type used for the key must have
+the following traits `PartialOrd + PartialEq + Copy + Default` since a binary tree is used to find the next
+node. Deletion of keys is currently supported but not thoroughly tested so use at your own risk and please
+inform me if you find any issues.
+
+The plan for the future is mainly preformance testing and documentation
 
 #### How to use:
     
-    let mut st = SequenceTree::new(); // initialize a new tree
+    let mut st: SequenceTree<char, u64> = SequenceTree::new(); // initialize tree
     
-    st.set("hello", "world"); // set a key to a value
-    
-    println!("value = {:?}", set.get("hello")); // fetch the value
+    let key: Vec<char> = String::from("hello").chars().collect(); // create key
+
+    st.set(key.to_owned(), 55); // set key
+
+    println!("{:?}", st.get(key) ); //get value of key
     
 #### Todo:
-    - deletion of keys and values from tree
-    - make generic implementation
-    - expand README to include 
-        - picture explantions, 
-        - efficiency calculation 
-        - preformance chart to compare with current solutions
-    - comments in code
+- deletion of keys and values from tree
+    - ~~implement~~
+    - more thorough testing
+- ~~make generic implementation~~
+- expand README to include 
+    - picture explantions, 
+    - efficiency calculation 
+    - preformance chart to compare with current solutions
+- comments in code
