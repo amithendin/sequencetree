@@ -37,7 +37,7 @@ the following traits `PartialOrd + PartialEq + Copy + Default` since a binary tr
 node. Deletion of keys is currently supported but not thoroughly tested so use at your own risk and please
 inform me if you find any issues.
 
-The plan for the future is mainly preformance testing and documentation
+The plan for the future is mainly performance testing and documentation
 
 #### How to use:
     

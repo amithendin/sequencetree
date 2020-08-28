@@ -40,7 +40,7 @@ mod tests {
     }
 
     #[test]
-    fn generics() {
+    fn deletion() {
         let mut st: SequenceTree<char, u64> = SequenceTree::new();
         let key: Vec<char> = String::from("amit").chars().collect();
 
