@@ -10,7 +10,7 @@ mod tests {
     use crate::binarysearchtree::BTree;
     use crate::sequencetree::SequenceTree;
 
-    const TEST_SCALE: u64 = 1_000;
+    const TEST_SCALE: u64 = 10_000;
     const KEY_MAX_LEN: usize = 30;
     const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZ\
                             abcdefghijklmnopqrstuvwxyz\
@@ -53,7 +53,7 @@ mod tests {
         println!("{:?}", st.get(key));
     }
 
-    /*#[test]
+    #[test]
     fn accuracy() {
         println!("########TEST PARAMS: \n\tkeys: {} \n\tkey_len_range: {} to {} \n\tcharset_len: {}", pretty_print_int(TEST_SCALE), 3, KEY_MAX_LEN, CHARSET.len());
 
@@ -64,18 +64,18 @@ mod tests {
         let mut values_rng: StdRng = SeedableRng::from_seed(values_seed);
 
         use crate::sequencetree::SequenceTree;
-        let mut at = SequenceTree::new();
+        let mut st: SequenceTree<char, String> = SequenceTree::new();
 
         for _ in 0u64 .. TEST_SCALE {
-            at.set(gen_str(&mut keys_rng), gen_str(&mut values_rng));
+            st.set(gen_str(&mut keys_rng).chars().collect(), gen_str(&mut values_rng));
         }
 
         keys_rng = SeedableRng::from_seed(keys_seed);
         values_rng = SeedableRng::from_seed(values_seed);
 
         for _ in 0u64 .. TEST_SCALE {
-            match at.get (gen_str(&mut keys_rng)) {
-                Some(val) => assert_eq!(val, gen_str(&mut values_rng)),
+            match st.get (gen_str(&mut keys_rng).chars().collect()) {
+                Some(val) => assert_eq!(val, &gen_str(&mut values_rng)),
                 None => panic!("key not found")
             };
         }
@@ -107,19 +107,19 @@ mod tests {
         println!("fetch time {:?} ms", start.elapsed().as_millis());
 
         println!("\n--------SEQUENCE TREE--------");
-        let mut at = SequenceTree::new();
+        let mut st: SequenceTree<char, String> = SequenceTree::new();
 
         rng = SeedableRng::from_seed(seed);
         start = Instant::now();
         for i in 0u64 .. TEST_SCALE {
-            at.set(gen_str(&mut rng), format!("value{}",i));
+            st.set(gen_str(&mut rng).chars().collect(), format!("value{}", i));
         }
         println!("store time {:?} ms", start.elapsed().as_millis());
 
         rng = SeedableRng::from_seed(seed);
         start = Instant::now();
         for i in 0u64 .. TEST_SCALE {
-            at.get(gen_str(&mut rng));
+            st.get(gen_str(&mut rng).chars().collect());
         }
         println!("fetch time {:?} ms", start.elapsed().as_millis());
 
@@ -130,5 +130,5 @@ mod tests {
         for _ in 0 .. lim {
             key = gen_str(&mut rng);
         }
-    }*/
+    }
 }
