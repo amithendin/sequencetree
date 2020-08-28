@@ -1,6 +1,6 @@
 [package]
 name = "sequencetree"
-version = "0.1.0"
+version = "0.1.2"
 authors = ["Amit Hendin"]
 edition = "2018"
 license = "GPL-3.0"
