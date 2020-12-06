@@ -1,5 +1,5 @@
-mod binarysearchtree;
-mod sequencetree;
+pub mod binarysearchtree;
+pub mod sequencetree;
 use sequencetree::SequenceTree;
 
 #[cfg(test)]
