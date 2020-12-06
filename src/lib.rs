@@ -1,6 +1,8 @@
-pub mod binarysearchtree;
-pub mod sequencetree;
-use sequencetree::SequenceTree;
+mod binarysearchtree;
+mod sequencetree;
+pub use sequencetree::SequenceTree;
+pub use sequencetree::Node;
+
 
 #[cfg(test)]
 mod tests {
