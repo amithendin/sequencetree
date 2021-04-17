@@ -1,5 +1,5 @@
 # Sequence Tree Collection
-### a collection for fast read and right storage of sequential data
+### a collection for fast read and write storage of sequential data
 ###### (as an alternative to hashtable)
 
 #### Intro
