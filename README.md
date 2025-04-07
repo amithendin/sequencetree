@@ -1,9 +1,10 @@
 # Sequence Tree Collection
-### a collection for fast read and write storage of sequential data
-###### (as an alternative to hashtable)
+### a collection for read and write storage of sequential data
+
+This is an implementation in rust of the establish collection named [trie](https://en.wikipedia.org/wiki/Trie#:~:text=In%20computer%20science%2C%20a%20trie,from%20a%20dictionary%20or%20set).
 
 #### Intro
-Sequence trees are a new type of collection that allows to store data using a key that is a sequence (such as string) and
+This collection that allows to store data using a key that is a sequence (such as string) and
 fetch then corresponding value to that key at a time that is relative to the length of the key and the amount of similar
 keys that already exist in the tree
 
@@ -18,7 +19,7 @@ but they all require some computationally expensive operations. In addition to t
 resizing of the array in the backend of the hashtable is required which can be an expensive operation.
 
 #### Sequence Trees
-In come Sequence Trees! sequence trees break up a given key in to nodes with each node holding one element of the sequence (in case of strings a character),
+Sequence trees break up a given key in to nodes with each node holding one element of the sequence (in case of strings a character),
 and each node linked to it's next neighbor (like a linked list), Then the very last value holds the actual value assigned to the key.
 Now to fetch the value of a key one simply need to follow each node in the tree in accordance the sequence of the key and easily reach
 the value, no hash function needed!. One advantage of this is that the keys are naturally compressed simply due to the nature of this collection,
@@ -50,12 +51,7 @@ The plan for the future is mainly performance testing and documentation
     println!("{:?}", st.get(key) ); //get value of key
     
 #### Todo:
-- deletion of keys and values from tree
-    - ~~implement~~
-    - more thorough testing
-- ~~make generic implementation~~
 - expand README to include 
     - picture explantions, 
-    - efficiency calculation 
+    - runtime and space complexity
     - preformance chart to compare with current solutions
-- comments in code
