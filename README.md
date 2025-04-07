@@ -1,14 +1,14 @@
-# Sequence Tree Collection
-### a collection for read and write storage of sequential data
+# Sequence Tree
+### a data structure for read and write storage of sequential data
 
-This is an implementation in rust of the establish collection named [trie](https://en.wikipedia.org/wiki/Trie#:~:text=In%20computer%20science%2C%20a%20trie,from%20a%20dictionary%20or%20set).
+This is an implementation in rust of the establish data structure named [trie](https://en.wikipedia.org/wiki/Trie#:~:text=In%20computer%20science%2C%20a%20trie,from%20a%20dictionary%20or%20set).
 
 #### Intro
-This collection that allows to store data using a key that is a sequence (such as string) and
+This data structure that allows to store data using a key that is a sequence (such as string) and
 fetch then corresponding value to that key at a time that is relative to the length of the key and the amount of similar
 keys that already exist in the tree
 
-This collection is meant to provide an alternative to hashtables which relay on a hash functions to convert the sequence to
+This data structure is meant to provide an alternative to hashtables which relay on a hash functions to convert the sequence to
 a place in an array.
 
 #### Hashtables
@@ -22,7 +22,7 @@ resizing of the array in the backend of the hashtable is required which can be a
 Sequence trees break up a given key in to nodes with each node holding one element of the sequence (in case of strings a character),
 and each node linked to it's next neighbor (like a linked list), Then the very last value holds the actual value assigned to the key.
 Now to fetch the value of a key one simply need to follow each node in the tree in accordance the sequence of the key and easily reach
-the value, no hash function needed!. One advantage of this is that the keys are naturally compressed simply due to the nature of this collection,
+the value, no hash function needed!. One advantage of this is that the keys are naturally compressed simply due to the nature of this data structure,
 but the challange to making the tree fast is in the way one finds the correct next node since one node (character) can link to multiple
 other characters (up to as much as in your character encoding). Because characters are backed by numbers I was able to simply store the
 next nodes of each node in a Binary Search Tree, but one can also use hashtables (which can be expensive memory wise since they reserve space),
