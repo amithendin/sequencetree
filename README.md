@@ -1,5 +1,5 @@
 # Sequence Tree
-### a data structure for read and write storage of sequential data
+### Rust implementation of Trie
 
 This is an implementation in rust of the establish data structure named [trie](https://en.wikipedia.org/wiki/Trie#:~:text=In%20computer%20science%2C%20a%20trie,from%20a%20dictionary%20or%20set).
 
@@ -49,9 +49,3 @@ The plan for the future is mainly performance testing and documentation
     st.set(key.to_owned(), 55); // set key
 
     println!("{:?}", st.get(key) ); //get value of key
-    
-#### Todo:
-- expand README to include 
-    - picture explantions, 
-    - runtime and space complexity
-    - preformance chart to compare with current solutions
